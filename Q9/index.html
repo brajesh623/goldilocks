@@ -1,0 +1,84 @@
+<!-- 9. Design a nice front-­­end page that take user name and password and as
+input and validate allow the user to be authenticated and if user
+credential is ok, then print success else failure. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .container {
+            max-width: 300px;
+            margin: 0 auto;
+			margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 10px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 3px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .message {
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <div class="message" id="message"></div>
+        <form id="login">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("login").addEventListener("submit", function (event) {
+            event.preventDefault();
+			
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+			
+            if (username === "username" && password === "password") {
+                document.getElementById("message").innerHTML = "Success";
+            } else {
+                document.getElementById("message").innerHTML = "Failure!";
+            }
+        });
+    </script>
+</body>
+</html>
